@@ -1,0 +1,40 @@
+<ion-content>
+  <ion-list>
+    <ion-menu-toggle [routerLink]="['/**']" >
+      <ion-item button>
+        <ion-label>Inicio</ion-label>
+        <ion-icon name="home"></ion-icon>
+      </ion-item>
+    </ion-menu-toggle>
+    
+    <ion-menu-toggle *ngIf="login && rol == 'usuario' " [routerLink]="['/perfil']">
+      <ion-item button>
+        <ion-label>Perfil</ion-label>
+        <ion-icon name="person"></ion-icon>
+      </ion-item>
+    </ion-menu-toggle>
+    
+    <ion-menu-toggle *ngIf="rol == 'admin'" [routerLink]="['/settings']">
+      <ion-item button>
+        <ion-label>Configuracion</ion-label>
+        <ion-icon name="settings"></ion-icon>
+      </ion-item> 
+    </ion-menu-toggle>
+
+    <ion-menu-toggle *ngIf="login == false" [routerLink]="['/logins']">
+      <ion-item button>
+        <ion-label>Login</ion-label>
+        <ion-icon name="log-in-outline"></ion-icon>
+      </ion-item> 
+    </ion-menu-toggle>
+
+    <ion-menu-toggle *ngIf="login">
+      <ion-item button (click)="logout()">
+        <ion-label>Logout</ion-label>
+        <ion-icon name="log-out-outline"></ion-icon>
+      </ion-item> 
+    </ion-menu-toggle>
+
+  </ion-list>
+</ion-content>
+

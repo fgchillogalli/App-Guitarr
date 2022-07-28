@@ -1,0 +1,7 @@
+{
+  "name": "internetcosas",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

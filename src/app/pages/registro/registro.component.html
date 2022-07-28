@@ -1,0 +1,35 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center" size="small">Registrate</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Nombre:</ion-label>
+    <ion-input [(ngModel)]="datos.nombre"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Edad:</ion-label>
+    <ion-input [(ngModel)]="datos.edad"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Correo:</ion-label>
+    <ion-input [(ngModel)]="datos.correo"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Contraseña:</ion-label>
+    <ion-input type="password" [(ngModel)]="datos.password"></ion-input>
+  </ion-item>
+
+  <ion-button (click)="registrar()" expand="block" fill="clear" shape="round">
+    Registrarme
+  </ion-button>
+</ion-content>

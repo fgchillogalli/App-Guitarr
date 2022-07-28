@@ -1,0 +1,31 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center" size="small">Iniciar Sesion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Correo: </ion-label>
+    <ion-input type="text" [(ngModel)]="credenciales.correo" ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Contraseña: </ion-label>
+    <ion-input type="password" [(ngModel)]="credenciales.password" ></ion-input>
+  </ion-item>
+
+  <ion-button (click)="login()" expand="block" fill="clear" shape="round">
+   Login
+   <ion-icon name="log-in-outline"></ion-icon>
+  </ion-button>
+
+  <ion-button [routerLink]="['/register']" routerLinkActive="router-link-active" expand="block" fill="clear" shape="round">
+    Registarse
+    <ion-icon name="person-add-outline"></ion-icon>
+  </ion-button>
+</ion-content>

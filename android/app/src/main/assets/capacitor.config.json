@@ -1,0 +1,6 @@
+{
+	"appId": "com.bwg.braille",
+	"appName": "internetcosas",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

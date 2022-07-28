@@ -1,0 +1,42 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Comida Rapida</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content> 
+  
+
+  <ion-item>
+    <ion-label>Agregar Mesas: </ion-label>
+    <ion-input [(ngModel)]="newMesa"></ion-input>
+
+    <ion-button (click)="addMesa()" fill="outline" slot="end">
+      <ion-icon name="add-circle" color="dark" ></ion-icon>
+    </ion-button>
+  </ion-item>
+
+  <div *ngFor="let mesa of mesa, let i = index">
+    <ion-item>
+      <ion-label>
+        <p>{{mesa}}</p> 
+      </ion-label>
+
+      <ion-button (click)="borrar(i)" slot="end" fill="clear">
+        <ion-icon slot="icon-only" color="danger" name="trash-bin"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </div>
+  
+</ion-content>
+
+<ion-footer>
+  <div class="ion-text-center">
+    <p>Total: {{mesa.length}}</p>
+  </div>
+</ion-footer>
+

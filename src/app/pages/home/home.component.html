@@ -1,0 +1,94 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+
+<ion-header >
+  <ion-toolbar>
+    <ion-title class="ion-text-center" size="small"> World Guitar Braille</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+  <p style="text-align: center;">BIENVENIDO </p>
+
+  <div>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-img src="assets/img/home.png"></ion-img>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <ion-item>
+    <ion-label>Hablar
+    </ion-label>
+    <ion-button (click)="speak('Bienvenidos')" fill= "clear" >
+     <ion-icon name="mic" ></ion-icon>
+    </ion-button>
+    
+  </ion-item>
+  <!--
+  <ion-item>
+    <ion-label>Nombre: </ion-label>
+    <ion-input [(ngModel)]="data.nombre" type="string"></ion-input>
+  </ion-item>
+
+  
+  <ion-item>
+    <ion-label>Nota 1:</ion-label>
+    <ion-input [(ngModel)]="data.nota1" type="number"></ion-input>
+  </ion-item>
+
+  
+  <ion-item>
+    <ion-label>Nota 2:</ion-label>
+    <ion-input [(ngModel)]="data.nota2" type="number"></ion-input>
+  </ion-item>
+
+  
+  <ion-item>
+    <ion-label>Nota 3:</ion-label>
+    <ion-input [(ngModel)]="data.nota3" type="number"></ion-input>
+  </ion-item>
+  
+  <ion-button (click)="promediar()">
+    Promediar con el servidor
+  </ion-button>
+
+  
+  <ion-button (click)="promediarCliente()">
+    Promediar con el cliente
+  </ion-button>
+  
+  <ng-container *ngIf="respuesta">
+    <ion-item>
+      <ion-label>
+        El estudiante: {{respuesta.nombre}}
+        <h2>{{respuesta.nota}}</h2>
+        <p>Con una nota de: {{respuesta.promedio}}</p>
+      </ion-label>
+      
+    </ion-item>
+  </ng-container> -->
+
+  <ion-button href="https://gwb12772467.wordpress.com/" fill="outline">
+    Visitanos
+  </ion-button >
+
+</ion-content>
+
+<ion-footer translucent="true">
+  <ion-toolbar style="border-radius:10px ">
+    <ion-button [routerLink]="['/login']" slot="end" size="default" shape="round" fill="outline">
+      <ion-icon name="help-sharp"></ion-icon>
+    </ion-button>
+
+    <ion-button [routerLink]="['/lesson']" slot="start"  size="default" shape="round" fill="outline">
+      Lecciones
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>  

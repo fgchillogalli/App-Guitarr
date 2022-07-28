@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Ayuda.</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cerrar()">
+        <ion-icon name="close-circle-sharp"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content>
+  <p>
+    Para poder acceder a las lecciones debes decir el comando, abrir lecciones.
+  </p>
+
+  <ion-item>
+    {{detalle.detalles}}
+  </ion-item>
+</ion-content>

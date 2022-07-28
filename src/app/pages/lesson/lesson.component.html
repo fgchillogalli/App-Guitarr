@@ -1,0 +1,124 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+
+<ion-header>
+  <ion-toolbar>
+    <ion-button [routerLink]="['/**']" fill="clear" color="dark">
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-button>
+    <ion-title> Lecciones </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+
+  <ion-grid>
+    <ion-row class="ion-justify-content-start">
+      <ion-col sizeXs="5" sizeMd="2">
+        <ion-img src="assets/img/clavijero.png" ></ion-img> 
+        <ion-button fill="outline" (click)="bienvenida()" >
+          Bienvenido.!!
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-end">
+      <ion-col sizeXs="5" sizeMd="2" style="margin-top: -144px;">  
+        <ion-img src="assets/img/lecciones.jpg"></ion-img>
+        <ion-button fill="outline" (click)="leccion()">
+            Leccion.1
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+ <!--
+  <ion-item>
+    <ion-label> Guardar Led </ion-label>
+    <ion-button (click)="guardarLed()" fill = "clear">
+      <ion-icon name="archive"></ion-icon>
+    </ion-button>
+  </ion-item>
+
+  
+  <ion-item>
+    <ion-label>Apagar Led</ion-label>
+    <ion-button (click)="apagarLed()" fill="clear" >
+      <ion-icon name="power" ></ion-icon>
+    </ion-button>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>{{estLed}}</ion-label>
+  </ion-item>
+
+  <ion-button (click)="registrar()" shape="round" expand="full">
+    <ion-icon slot="start" name="person-add"></ion-icon>
+    Registrarse
+  </ion-button>
+  
+ <div *ngIf="addNuevo == true">
+    <ion-item>
+      <ion-label>Nombre: </ion-label>
+      <ion-input [(ngModel)]="newUsuario.nombre"></ion-input>
+    </ion-item>
+      
+    <ion-item>
+      <ion-label>Celular: </ion-label>
+      <ion-input [(ngModel)]="newUsuario.celular"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Correo: </ion-label>
+      <ion-input [(ngModel)]="newUsuario.correo"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Contraseña: </ion-label>
+      <ion-input type="number" [(ngModel)]="newUsuario.password"></ion-input>
+    </ion-item>
+    <ul style="text-align: center;">
+      <ion-button (click)="cancelar()" color="danger" size="small" fill="solid" shape="round">
+        Cancelar
+      </ion-button>
+      
+      <ion-button (click)="guardar()" color="success" size="small" fill="solid" shape="round" >
+        Guardar 
+      </ion-button>
+    </ul>
+ </div>
+
+  <ion-list>
+    <ion-list-header>
+      <ion-label class="ion-text-center">Usuarios Registrados: </ion-label>
+    </ion-list-header>
+
+    <div *ngFor="let usuario of usuarios; let i = index">
+      <ion-item>
+        <ion-label>{{usuario.nombre}}
+          <p>{{usuario.celular}}</p>
+          <p>{{usuario.correo}}</p>
+          <p>{{usuario.password}</p>
+        </ion-label>
+        <ion-buttons slot="end">
+          <ion-button (click)="editar(usuario)">
+            <ion-icon slot="icon-only" name="create"></ion-icon>
+          </ion-button>
+          <ion-button (click)="eliminar(i)">
+            <ion-icon slot="icon-only" color="danger" name="trash-bin"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-item>
+    </div>
+    
+  </ion-list>-->
+</ion-content>
+
+<ion-footer translucent="true">
+  <ion-toolbar style="border-radius:10px ">
+    <ion-button [routerLink]="['/help']" slot="end" fill="outline">
+      <ion-icon name="help-sharp"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

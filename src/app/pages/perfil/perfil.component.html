@@ -1,0 +1,45 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center" size="small">
+      Mi perfil
+    </ion-title>
+    <ion-button [routerLink]="['/**']" fill="clear">
+      <ion-icon name="arrow-back-sharp"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list *ngIf="infoUser ">
+    <ion-item>
+      <ion-label>
+        Usuario: {{infoUser.nombre}}
+      </ion-label>
+      <ion-icon (click)="updateDatos('nombre')" slot="end" name="create"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        Edad: {{infoUser.edad}}
+      </ion-label>
+      <ion-icon (click)="updateDatos('edad')" slot="end" name="create"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        Correo: {{infoUser.correo}}
+      </ion-label>
+    </ion-item>
+
+
+  </ion-list>
+</ion-content>
+
+
+
+

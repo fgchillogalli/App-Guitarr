@@ -1,0 +1,54 @@
+<ion-header>
+    <app-header></app-header>
+</ion-header>
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Sorteo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Nuevo Cupon: </ion-label>
+    <ion-input [(ngModel)]="newCupon"></ion-input>
+    <ion-button fill="outline" (click)="addCupon()" >
+      Crear Cupon 
+    </ion-button>
+  </ion-item>
+
+
+  <div>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-img src="assets/img/bingo.png"></ion-img>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <ion-item>
+    <ion-label>Canjear Cupon: </ion-label>
+    <ion-input [(ngModel)]="cuponC"></ion-input>
+    <ion-button fill="outline" (click)="canjear()" >
+      Canjear 
+    </ion-button>
+  </ion-item>
+
+  <div class = "success" *ngIf="valido == 'existe'">
+    <h2>FELICITACIONES.!!! </h2>
+  </div>
+  
+  
+  <div class = "fail" *ngIf="valido == 'no existe'">
+    <h2>Cupon Inexsistente.!!  </h2>
+  </div>
+
+
+  
+   
+
+  
+
+</ion-content>      
