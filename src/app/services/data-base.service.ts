@@ -25,4 +25,8 @@ export class DataBaseService {
   getId () {
     return this.firestore.createId();
   }
+
+  getSubcollection<tipo>(path: string) {
+    return this.firestore.collectionGroup<tipo>(path).valueChanges();
+  }
 }

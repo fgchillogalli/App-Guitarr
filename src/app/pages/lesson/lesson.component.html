@@ -3,18 +3,41 @@
 </ion-header>
 
 <ion-header>
-  <ion-toolbar>
+  <ion-item>
     <ion-button [routerLink]="['/**']" fill="clear" color="dark">
       <ion-icon name="arrow-back"></ion-icon>
     </ion-button>
     <ion-title> Lecciones </ion-title>
-  </ion-toolbar>
+  </ion-item>
 </ion-header>
 
 <ion-content>
   
-
   <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col sizeXs="12" sizeSm="6" sizeMd="4" sizeLg="3" *ngFor="let leccion of lecciones">
+        <ion-card>
+          <ion-grid>
+            <ion-row class="ion-justify-content-center">
+              <ion-col sizeXs="12" class="ion-text-center">
+                <img [src]="leccion.imagen" alt="" style="width:128px;height:128px;"/>
+              </ion-col>
+            </ion-row>
+            <ion-row class="ion-justify-content-center">
+              <ion-col sizeXs="12" class="ion-text-center">
+                <ion-button fill="outline" (click)="playAudio(leccion)" >
+                  {{leccion.leccion}}
+                </ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <!-- <ion-grid>
     <ion-row class="ion-justify-content-start">
       <ion-col sizeXs="5" sizeMd="2">
         <ion-img src="assets/img/clavijero.png" ></ion-img> 
@@ -32,7 +55,8 @@
         </ion-button>
       </ion-col>
     </ion-row>
-  </ion-grid>
+  </ion-grid> -->
+
  <!--
   <ion-item>
     <ion-label> Guardar Led </ion-label>

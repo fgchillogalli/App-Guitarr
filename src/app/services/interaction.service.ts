@@ -25,6 +25,7 @@ export class InteractionService {
     this.loading = await this.loadingController.create({
       cssClass: 'my-custom-class',
       message: mensaje,
+      // duration: 2000,
     });
     await this.loading.present();
 

@@ -1,3 +1,4 @@
+import { InteractionService } from './../../services/interaction.service';
 import { DataBaseService } from './../../services/data-base.service';
 import { userI } from './../../models';
 import { AuthService } from './../../services/auth.service';
@@ -35,11 +36,12 @@ export class SettingsComponent implements OnInit {
 
   constructor(private storageService: FirestorageService,
               private authService: AuthService,
-              private dataBaseService: DataBaseService) {
+              private dataBaseService: DataBaseService,
+              private interactionService: InteractionService) {
                 this.authService.stateUser().subscribe( res => {
                   if (res) {
                     this.uid = res.uid;
-                    console.log( 'desde settings', res);
+                    // console.log( 'desde settings', res);
                   }
                   
                 })
@@ -48,11 +50,12 @@ export class SettingsComponent implements OnInit {
   ngOnInit() {}
 
   async saveDatos(){
+    this.interactionService.presentLoading('Guardando...');
     const idDatos = this.dataBaseService.getId();
     const path = 'Usuarios/' + this.uid + '/Datos';
     const data = this.newDatos;
     data.idDatos = idDatos;
-    console.log(data);
+    // console.log(data);
     
     const pathImage = 'Imagenes';
     const nameImage = this.newDatos.leccion;
@@ -70,10 +73,13 @@ export class SettingsComponent implements OnInit {
     
     this.dataBaseService.createDoc(data, path, idDatos).then( res => {
       console.log('Datos guardados', res);
-      
+      this.interactionService.presentToast('Leccion guardada');
+      this.interactionService.closeLoading();   
+      this.reset();
     })
 
   }
+
   async newImageUpload(event: any) {
     if (event.target.files && event.target.files[0]) {
       this.newImage = event.target.files[0];
@@ -96,5 +102,13 @@ export class SettingsComponent implements OnInit {
     }
   }
 
+  reset () {
+    this.newDatos = {
+      idDatos: null,
+      leccion: null,
+      imagen: null,
+      audio: null,
+    }
+  }
 
 }
