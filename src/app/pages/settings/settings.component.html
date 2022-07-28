@@ -4,14 +4,16 @@
 
 <ion-header>
   <ion-toolbar>
-    <ion-title class="ion-text-center">Configuracion</ion-title>
-    <ion-button [routerLink]="['/**']" fill="clear" color="tertiary">
-      <ion-icon name="arrow-back-sharp"></ion-icon>
-    </ion-button>
-
-    <ion-button (click)="saveAudio()" expand="block" fill="clear" shape="round" slot="end" color="tertiary">
-      <ion-icon name="save"></ion-icon>
-    </ion-button>
+    <ion-item lines="none">
+      <ion-button [routerLink]="['/**']" fill="clear" color="tertiary">
+        <ion-icon name="arrow-back-sharp"></ion-icon>
+      </ion-button>
+      <ion-title class="ion-text-center">Configuracion</ion-title>
+  
+      <ion-button (click)="saveDatos()" expand="block" fill="clear" shape="round" slot="end" color="tertiary">
+        <ion-icon name="save"></ion-icon>
+      </ion-button>
+    </ion-item>
 
   </ion-toolbar>
 </ion-header>
@@ -22,21 +24,35 @@
   <ion-list>
     <ion-item>
       <ion-label>Leccion N°: </ion-label>
-      <ion-input type="text" placeholder="Nombre o Numero de Leccion"></ion-input>
+      <ion-input type="text" placeholder="Nombre o Numero de Leccion" [(ngModel)]="newDatos.leccion"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label>Imagen de Referencia: </ion-label>
-      <ion-input type="text" placeholder="Imagen"></ion-input>
+      <ion-label class="text" position="stacked">Audio</ion-label>
+      <ion-buttons slot="end">
+        <ion-button>
+           <label for="audio-upload">
+             <ion-icon color="dark" slot="icon-only" name="musical-note"></ion-icon>
+           </label>
+            <input (change)="newAudioUpload($event)" id="audio-upload" style="display: none" type="file" accept="audio/*">
+        </ion-button>
+      </ion-buttons>
     </ion-item>
-
+    
     <ion-item>
-      
-    
-      <ion-label>Audio: </ion-label>
-      <ion-input (change)="updateAudio($event)" type="file" placeholder="mp3 o m4a"></ion-input>
+      <ion-label class="text" position="stacked">Image</ion-label>
+      <ion-buttons slot="end">
+        <ion-button>
+           <label for="image-upload">
+             <ion-icon color="dark" slot="icon-only" name="image"></ion-icon>
+           </label>
+            <input (change)="newImageUpload($event)" id="image-upload" style="display: none" type="file" accept="image/*">
+        </ion-button>
+      </ion-buttons>
     </ion-item>
-    
+    <ion-item *ngIf="newDatos.imagen" class="ion-margin">
+      <img class="image" [src]="newDatos.imagen">
+    </ion-item>
   </ion-list>
 
   

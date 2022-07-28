@@ -45,6 +45,7 @@ export interface userI{
 }
 
 export interface DatosI{
+    idDatos: string;
     leccion: string;
     imagen: string;
     audio: string;

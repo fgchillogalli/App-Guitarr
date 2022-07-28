@@ -21,4 +21,8 @@ export class DataBaseService {
   updateDoc(path: string, id: string, data: any ){
     return this.firestore.collection(path).doc(id).update(data);
   }
+
+  getId () {
+    return this.firestore.createId();
+  }
 }

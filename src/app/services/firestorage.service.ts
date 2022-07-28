@@ -9,7 +9,7 @@ export class FirestorageService {
 
   constructor(public storage: AngularFireStorage) { }
 
-  subirAudio(file: any, path: string, name: string): Promise<string> {
+  uploadAudio(file: any, path: string, name: string): Promise<string> {
     return new Promise(resolve =>{
       const filePath = path + '/' + name;
       const ref = this.storage.ref(filePath);
@@ -24,6 +24,23 @@ export class FirestorageService {
         })
       )
       .subscribe();
+    });
+  }
+
+  uploadImage(file: any, path: string, name: string): Promise <string> {
+    return new Promise( resolve => {
+      const filePath = path + '/' + name;
+      const ref = this.storage.ref(filePath);
+      const task = ref.put(file);
+      task.snapshotChanges().pipe(
+        finalize( () => {
+          ref.getDownloadURL().subscribe( res => {
+            const downloadURL = res;
+            resolve(downloadURL);
+            return;
+          });
+        })
+     ).subscribe();
     });
   }
 }
